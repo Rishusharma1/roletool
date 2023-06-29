@@ -3,4 +3,4 @@
 - hosts: red
   become: true
   roles:
-    - roletool
+    - tool1/roletool
