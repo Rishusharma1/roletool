@@ -1,0 +1,28 @@
+---
+- name: Add Elasticsearch GPG key
+  apt_key:
+    url: "{{ urls }}"
+    state: present
+
+- name: Add Elasticsearch APT repository
+  apt_repository:
+    repo: "{{ repos }}"
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install Elasticsearch
+  apt:
+    name: elasticsearch={{ v2 }}
+    state: present
+
+- name: reload systemd config
+  systemd: daemon_reload=yes
+
+- name: Start Elasticsearch
+  service:
+   name: elasticsearch
+   state: started
+   enabled: yes
+   

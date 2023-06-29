@@ -1,0 +1,50 @@
+---
+# # Here you can specify the version like v1: 8.8.0 , v2: 7.17.1
+# elasticsearch_version: "7.x"
+# v1: 8.8.0
+# v2: 7.17.1
+
+# #Here you can specify the version of kibana
+# kibana_version: "7.x"
+# v3: 7.17.10
+
+
+templ: 
+   - /etc/elasticsearch/elasticsearch.yml
+templs:
+   - /etc/elasticsearch/jvm.options
+tempkib:
+   - /etc/kibana/kibana.yml
+
+urls: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+repos: "deb https://artifacts.elastic.co/packages/{{ elasticsearch_version }}/apt stable main"
+repos_redhat: https://artifacts.elastic.co/packages/{{ elasticsearch_version }}/yum
+
+#kibana var
+kibrepo: "deb https://artifacts.elastic.co/packages/{{ kibana_version }}/apt stable main"
+
+#kibana redhat
+baseurl_redhat: "https://artifacts.elastic.co/packages/{{ kibana_versions }}/yum"
+
+
+
+
+
+# paths: 
+#    - /etc/elasticsearch/elasticsearch.yml
+#    - /etc/elasticsearch/jvm.options
+#    - /etc/kibana/kibana.yml 
+
+
+
+
+#all 8 and 7
+
+# wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+# sudo apt-get install apt-transport-https
+# echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+
+# 8
+# wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+# sudo apt-get install apt-transport-https
+# echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-8.x.list
