@@ -1,5 +1,5 @@
 [red]
-node1 ansible_user=ubuntu ansible_host=52.66.116.95
+node1 ansible_user=ubuntu ansible_host=3.110.164.252
 # node1 ansible_user=ec2-user ansible_host=13.234.239.156
 #3.110.167.213
 #65.2.121.72
